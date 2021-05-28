@@ -9,6 +9,10 @@ const { DataTypes } = Sequelize;
 // Define schema
 const Barang = db.define('barang', {
   // Define attributes
+  id_barang: {
+    type: DataTypes.INTEGER,
+    primaryKey: true
+},
   nama: {
     type: DataTypes.STRING
   },
@@ -17,7 +21,8 @@ const Barang = db.define('barang', {
   }
 },{
   // Freeze Table Name
-  freezeTableName: true
+  freezeTableName: true,
+  timestamps: false,
 });
  
 // Export model Product

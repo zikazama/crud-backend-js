@@ -1,5 +1,5 @@
 // Import model Product
-import Product from "../models/Barang.js";
+import Barang from "../models/Barang.js";
  
 // Get semua product
 export const getBarang = async (req, res) => {
@@ -16,7 +16,7 @@ export const getBarangById = async (req, res) => {
     try {
         const product = await Barang.findAll({
             where: {
-                id: req.params.id
+                id_barang: req.params.id
             }
         });
         res.send(product[0]);
@@ -42,7 +42,7 @@ export const updateBarang = async (req, res) => {
     try {
         await Barang.update(req.body, {
             where: {
-                id: req.params.id
+                id_barang: req.params.id
             }
         });
         res.json({
@@ -58,7 +58,7 @@ export const deleteBarang = async (req, res) => {
     try {
         await Barang.destroy({
             where: {
-                id: req.params.id
+                id_barang: req.params.id
             }
         });
         res.json({
